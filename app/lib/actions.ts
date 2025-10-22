@@ -35,9 +35,7 @@ export async function createInvoice(formData: FormData) {
   `;
   } catch (error) {
     console.log(error);
-    return {
-      message: "Database Error: Failed to Create Invoice.",
-    };
+    console.error("DB Error:", error);
   }
 
   revalidatePath("/dashboard/invoices");
